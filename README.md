@@ -19,9 +19,7 @@ subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 Run this:
 
 ```sh
-git clone https://github.com/slashadmin/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-script/bootstrap
+git clone https://github.com/slashadmin/dotfiles.git ~/.dotfiles && ~/.dotfiles/script/bootstrap && chsh -s /bin/zsh
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
@@ -34,6 +32,13 @@ which sets up a few paths that'll be different on your particular machine.
 defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
+
+## Editor Theme
+Shell [agnoster's Theme](https://gist.github.com/3712874)
+In order for this theme to render correctly, you will need a [Powerline-patched font](https://github.com/powerline/fonts).
+
+iTerm 2 Theme [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized), with 
+with Font
 
 ## topical
 
