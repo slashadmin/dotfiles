@@ -34,11 +34,8 @@ time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
 ## Editor Theme
-Shell [agnoster's Theme](https://gist.github.com/3712874)
-In order for this theme to render correctly, you will need a [Powerline-patched font](https://github.com/powerline/fonts).
 
-iTerm 2 Theme [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized), with 
-with Font
+iTerm 2 Theme [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized). In order for this theme to render correctly, you will need a [Powerline-patched font](https://github.com/powerline/fonts).
 
 ## topical
 
