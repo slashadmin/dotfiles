@@ -13,3 +13,9 @@ alias ....="cd ../../.."
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias s='search'
+
+# Show hide hidden files
+alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder /System/Library/CoreServices/Finder.app'
+alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder /System/Library/CoreServices/Finder.app'
+alias shf='showhiddenfiles';
+alias hhf='hidehiddenfiles';
