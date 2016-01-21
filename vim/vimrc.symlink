@@ -1,0 +1,50 @@
+" install Plugin Manager Plug Vim if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+" Plugins - install using :PlugInstall
+call plug#begin('~/.vim/plugged')
+Plug 'jdkanani/vim-material-theme'
+Plug 'mattn/emmet-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'powerline/powerline'
+call plug#end()
+
+" Enable Theme
+syntax enable
+set background=dark
+colorscheme material-theme
+
+" Font
+set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15
+set linespace=6
+
+" GUI
+set number "display line numbers
+set tabstop=4
+
+" Disable Arrow Keys
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+" MacVim Settings
+set guioptions-=T 	" Removes top toolbar
+set guioptions-=r 	" Removes right hand scroll bar
+set go-=L 			" Removes left hand scroll bar
+
+" Powerline (Fancy thingy at bottom stuff)
+set t_Co=256 " Use 256 colours (Use this setting only if your terminal supports 256 colours) 
+let g:Powerline_symbols = 'fancy'
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
