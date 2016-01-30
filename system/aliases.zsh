@@ -19,3 +19,6 @@ alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles YES && 
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder /System/Library/CoreServices/Finder.app'
 alias shf='showhiddenfiles';
 alias hhf='hidehiddenfiles';
+
+# Instant Server for Current Directory - https://gist.github.com/JeffreyWay/1525217
+alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
