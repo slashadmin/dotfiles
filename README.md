@@ -37,6 +37,8 @@ this script in `bin/`.
 
 iTerm 2 Theme [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized). In order for this theme to render correctly, you will need a [Powerline-patched font](https://github.com/powerline/fonts).
 
+For VIM I use the Font [Fira Code](https://github.com/tonsky/FiraCode).
+
 ## topical
 
 Everything's built around topic areas. If you're adding a new area to your

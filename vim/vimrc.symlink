@@ -1,33 +1,82 @@
-" install Plugin Manager Plug Vim if not already installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+set nocompatible         				"We want the latest Vim settings/options.
 
-" Plugins - install using :PlugInstall
-call plug#begin('~/.vim/plugged')
-Plug 'jdkanani/vim-material-theme'
-Plug 'mattn/emmet-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ervandew/supertab'
-Plug 'powerline/powerline'
-call plug#end()
 
-" Enable Theme
+"-------------Plugins--------------"
+filetype off                			" required
+
+"Set the runtime path to include Vundle and initialize.
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-vinegar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'CTrlpvim/ctrlp.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
+
+"-------------Basic Settings--------------"
 syntax enable
-set background=dark
-colorscheme material-theme
+set backspace=indent,eol,start			"Make backspace behave like every other editor.
+let mapleader = ',' 			    	"The default is \, but a comma is much better.
+set number								"Let's activate line numbers.
 
-" Font
-set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15
-set linespace=6
 
-" GUI
-set number "display line numbers
-set tabstop=4
 
-" Disable Arrow Keys
+
+"-------------Visuals--------------"
+colorscheme atom-dark
+set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
+set guifont=Fira_Code:h17				"Set the default font family and size.
+set linespace=15   				        "Macvim-specific line-height.
+
+set guioptions-=l                       "Disable Gui scrollbars.
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+
+
+
+"-------------Search--------------"
+set hlsearch							"Highlight all matched terms.
+set incsearch							"Incrementally highlight, as we type.
+
+
+
+
+"-------------Split Management--------------"
+set splitbelow 							"Make splits default to below...
+set splitright							"And to the right. This feels more natural.
+
+"We'll set simpler mappings to switch between splits.
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+
+
+
+
+"-------------Mappings--------------"
+"Make it easy to edit the Vimrc file.
+nmap <Leader>ev :tabedit $MYVIMRC<cr>
+
+"Add simple highlight removal.
+nmap <Leader><space> :nohlsearch<cr>
+
+"Make NERDTree easier to toggle.
+nmap <D-1> :NERDTreeToggle<cr>
+
+nmap <c-R> :CtrlPBufTag<cr>
+nmap <D-e> :CtrlPMRUFiles<cr>
+
+"Disable Arrow Keys
 noremap  <Up> ""
 noremap! <Up> <Esc>
 noremap  <Down> ""
@@ -37,14 +86,25 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-" MacVim Settings
-set guioptions-=T 	" Removes top toolbar
-set guioptions-=r 	" Removes right hand scroll bar
-set go-=L 			" Removes left hand scroll bar
 
-" Powerline (Fancy thingy at bottom stuff)
-set t_Co=256 " Use 256 colours (Use this setting only if your terminal supports 256 colours) 
-let g:Powerline_symbols = 'fancy'
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+
+"-------------Plugins--------------"
+"/
+"/ CtrlP
+"/
+let g:ctrlp_custom_ignore = 'node_modules\DS_Store\bower_components\vendor\|git'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+let NERDTreeHijackNetrw = 0		"Use - to open Vinegar instead of NERDTree
+
+
+
+
+"-------------Auto-Commands--------------"
+"Automatically source the Vimrc file on save.
+
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
+augroup END
+
