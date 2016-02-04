@@ -1,2 +1,2 @@
-export EDITOR='subl'
+export EDITOR='mvim'
 export DEFAULT_USER='christophengelmayer'
