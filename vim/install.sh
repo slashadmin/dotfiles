@@ -5,7 +5,7 @@ echo $DOTFILES_ROOT
 # Install Atom-Dark color theme
 if [ ! -f $HOME/.vim/colors/atom-dark.vim ]; then
   mkdir -p $HOME/.vim/colors
-  curl -o $HOME/.vim/colors/atom-dark.vim https://github.com/gosukiwi/vim-atom-dark/raw/master/colors/atom-dark.vim -L
+  curl -o $HOME/.vim/colors/material-theme.vim https://github.com/jdkanani/vim-material-theme/raw/master/colors/material-theme.vim -L
 fi
 
 # Install Vundle and plugins

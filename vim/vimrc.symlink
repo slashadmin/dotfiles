@@ -30,7 +30,7 @@ set number								"Let's activate line numbers.
 
 
 "-------------Visuals--------------"
-colorscheme atom-dark
+colorscheme material-theme 
 set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
 set guifont=Fira_Code:h17				"Set the default font family and size.
 set linespace=15   				        "Macvim-specific line-height.
