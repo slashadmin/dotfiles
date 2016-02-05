@@ -2,8 +2,8 @@
 
 echo $DOTFILES_ROOT
 
-# Install Atom-Dark color theme
-if [ ! -f $HOME/.vim/colors/atom-dark.vim ]; then
+# Install Material color theme
+if [ ! -f $HOME/.vim/colors/material-theme.vim ]; then
   mkdir -p $HOME/.vim/colors
   curl -o $HOME/.vim/colors/material-theme.vim https://github.com/jdkanani/vim-material-theme/raw/master/colors/material-theme.vim -L
 fi
