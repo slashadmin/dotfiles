@@ -40,7 +40,8 @@ set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
 set guifont=menlo\ for\ powerline:h16				"Set the default font family and size.
 set linespace=15   				        "Macvim-specific line-height.
 
-set guioptions-=l                       "Disable Gui scrollbars.
+set guioptions-=e					"Disable GUI tabs
+set guioptions-=l					"Disable Gui scrollbars.
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
@@ -75,9 +76,6 @@ nmap <Leader>ev :tabedit $MYVIMRC<cr>
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
-"Make NERDTree easier to toggle.
-nmap <D-P> :NERDTreeToggle<cr>
-
 
 "Disable Arrow Keys
 noremap  <Up> ""
@@ -98,7 +96,16 @@ noremap! <Right> <Esc>
 "/
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store|bower_components\|vendor\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
-let NERDTreeHijackNetrw = 0		"Use - to open Vinegar instead of NERDTree
+
+map <D-p> :CtrlP<cr>
+
+
+"/
+"/ NERDTree 
+"/
+let NERDTreeHijackNetrw = 0		"Use dash to open Vinegar instead of NERDTree
+"Make NERDTree easier to toggle.
+nmap <D-P> :NERDTreeToggle<cr>
 
 
 
