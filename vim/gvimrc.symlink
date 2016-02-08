@@ -1,4 +1,9 @@
-"Disable the print key for Macvim
 if has("gui_macvim")
+    "Disable the print key for Macvim
     macmenu &File.Print key=<nop>
+    
+    " Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
+    " the right side. Ctrl-Shift-Tab goes the other way.
+    noremap <C-Tab> :tabnext<CR>
+    noremap <C-S-Tab> :tabprev<CR>
 endif
