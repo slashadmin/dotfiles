@@ -35,7 +35,8 @@ set noerrorbells         " don't beep
 
 
 "-------------Visuals--------------"
-colorscheme material-theme 
+set background=dark 
+colorscheme material-theme
 set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
 set guifont=menlo\ for\ powerline:h16				"Set the default font family and size.
 set linespace=15   				        "Macvim-specific line-height.
