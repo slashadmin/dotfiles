@@ -9,10 +9,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+
+" Navigation
 Plugin 'tpope/vim-vinegar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'CTrlpvim/ctrlp.vim'
+
+" Language packs
 Plugin 'sheerun/vim-polyglot'
+
+" Autocompletion
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,7 +59,6 @@ colorscheme material-theme
 set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
 set guifont=menlo\ for\ powerline:h16				"Set the default font family and size.
 set linespace=15   				        "Macvim-specific line-height.
-
 set guioptions-=e					"Disable GUI tabs
 set guioptions-=l					"Disable Gui scrollbars.
 set guioptions-=L
@@ -122,8 +128,17 @@ map <D-p> :CtrlP<cr>
 "/
 let NERDTreeHijackNetrw = 0		"Use dash to open Vinegar instead of NERDTree
 "Make NERDTree easier to toggle.
-nmap <D-P> :NERDTreeToggle<cr>
+nmap <D-1> :NERDTreeToggle<cr>
 
+
+"/
+"/ Emmet 
+"/
+" Use only for html
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,scss EmmetInstall
+" Use Tab completion
+" autocmd BufRead,BufNewFile *.html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 
 
