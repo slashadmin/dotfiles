@@ -25,11 +25,23 @@ filetype plugin indent on    " required
 syntax enable
 set backspace=indent,eol,start			"Make backspace behave like every other editor.
 let mapleader = ',' 			    	"The default is \, but a comma is much better.
-set number								"Let's activate line numbers.
-set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
-set visualbell           " don't beep
-set noerrorbells         " don't beep
+set number					            "Let's activate line numbers.
+set visualbell					        " don't beep
+set noerrorbells                        " don't beep
+set scrolloff=3                         "Start scrolling slightly before the cursor reaches an edgt
+set sidescrolloff=5
+set sidescroll=1                        " Scroll sideways a character at a time, rather than a screen at a time
 
+
+
+
+" -------------Tabs, indentation and lines-------------"
+" 4 spaces please
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftround                          " Round indent to nearest multiple of 4
 
 
 
@@ -77,6 +89,10 @@ nmap <Leader>ev :tabedit $MYVIMRC<cr>
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
+" jj to throw you into normal mode from insert mode
+inoremap jj <esc>
+" jk to throw you into normal mode from insert mode
+inoremap jk <esc>
 
 "Disable Arrow Keys
 noremap  <Up> ""
