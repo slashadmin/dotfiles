@@ -1,6 +1,5 @@
 set nocompatible         				"We want the latest Vim settings/options.
 
-
 "-------------Plugins--------------"
 filetype off                			" required
 
@@ -39,6 +38,7 @@ set scrolloff=3                         "Start scrolling slightly before the cur
 set sidescrolloff=5
 set sidescroll=1                        " Scroll sideways a character at a time, rather than a screen at a time
 set clipboard=unnamed                   " Yank into system clipboard
+set autoread                            " display changed files immediately
 
 
 
