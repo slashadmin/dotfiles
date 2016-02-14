@@ -38,6 +38,7 @@ set noerrorbells                        " don't beep
 set scrolloff=3                         "Start scrolling slightly before the cursor reaches an edgt
 set sidescrolloff=5
 set sidescroll=1                        " Scroll sideways a character at a time, rather than a screen at a time
+set clipboard=unnamed                   " Yank into system clipboard
 
 
 
@@ -119,7 +120,6 @@ noremap! <Right> <Esc>
 "/
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store|bower_components\|vendor\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
-
 map <D-p> :CtrlP<cr>
 
 
