@@ -39,6 +39,8 @@ set sidescrolloff=5
 set sidescroll=1                        " Scroll sideways a character at a time, rather than a screen at a time
 set clipboard=unnamed                   " Yank into system clipboard
 set autoread                            " display changed files immediately
+set ignorecase                          " ignore case when searching
+set smartcase                           " ignore case if search pattern is all lowercase,
 
 " Swap files out of the project root
 set backupdir=~/.vim/backup//
