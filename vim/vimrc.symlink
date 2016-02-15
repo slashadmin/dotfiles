@@ -124,6 +124,12 @@ noremap! <Right> <Esc>
 
 
 
+" -------------Abbreviations (Shortcuts)-------------"
+ab art !php artisan
+
+
+
+
 "-------------Plugins--------------"
 "/
 "/ CtrlP
