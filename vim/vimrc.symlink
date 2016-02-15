@@ -31,7 +31,7 @@ filetype plugin indent on    " required
 syntax enable
 set backspace=indent,eol,start			"Make backspace behave like every other editor.
 let mapleader = ',' 			    	"The default is \, but a comma is much better.
-set nonumber					        "Let's deactivate line numbers.
+set number					            "Let's activate line numbers.
 set visualbell					        " don't beep
 set noerrorbells                        " don't beep
 set scrolloff=3                         "Start scrolling slightly before the cursor reaches an edge
@@ -63,10 +63,6 @@ set linespace=15   				        "Macvim-specific line-height.
 set guioptions-=e					"Disable GUI tabs
 "Highlight current tab (material-theme)
 hi TabLineSel gui=bold guifg=white guibg=bg 
-
-" Fake left padding
-set foldcolumn=1
-hi foldcolumn guibg=bg
 
 set guioptions-=l					"Disable Gui scrollbars.
 set guioptions-=L
