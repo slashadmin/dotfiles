@@ -40,6 +40,11 @@ set sidescroll=1                        " Scroll sideways a character at a time,
 set clipboard=unnamed                   " Yank into system clipboard
 set autoread                            " display changed files immediately
 
+" Swap files out of the project root
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
+
 
 
 " -------------Tabs, indentation and lines-------------"

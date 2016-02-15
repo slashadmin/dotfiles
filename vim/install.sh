@@ -2,6 +2,14 @@
 
 echo $DOTFILES_ROOT
 
+# Create swap and backup folders
+if [ ! -f $HOME/.vim/swap ]; then
+  mkdir -p $HOME/.vim/swap
+fi
+if [ ! -f $HOME/.vim/backup ]; then
+  mkdir -p $HOME/.vim/backup
+fi
+
 # Install Material color theme
 if [ ! -f $HOME/.vim/colors/material-theme.vim ]; then
   mkdir -p $HOME/.vim/colors
