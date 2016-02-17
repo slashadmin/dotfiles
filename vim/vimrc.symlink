@@ -41,7 +41,11 @@ set clipboard=unnamed                   " Yank into system clipboard
 set autoread                            " display changed files immediately
 set ignorecase                          " ignore case when searching
 set smartcase                           " ignore case if search pattern is all lowercase,
-
+set whichwrap=h,l,b,<,>,~,[,]           " Allow motions over line-endings etc
+autocmd TabEnter * stopinsert           " Start new tabs in normal mode
+" Allow vertical motions in long lines
+nnoremap k gk 
+nnoremap j gj
 " Swap files out of the project root
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -152,7 +156,7 @@ nmap <D-1> :NERDTreeToggle<cr>
 "/
 " Use only for html
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss EmmetInstall
+autocmd FileType html,css,scss,blade EmmetInstall
 " Use Tab completion
 " autocmd BufRead,BufNewFile *.html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
