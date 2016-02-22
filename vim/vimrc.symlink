@@ -17,8 +17,10 @@ Plugin 'CTrlpvim/ctrlp.vim'
 " Language packs
 Plugin 'sheerun/vim-polyglot'
 
-" Autocompletion
+" Autocompletion, Snippets
 Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'msanders/snipmate.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,6 +108,10 @@ nmap <C-L> <C-W><C-L>
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
+"Make it easy to edit snippet files.
+nmap <Leader>es :e ~/.vim/snippets/
+"shortcut to reload snippets
+nmap <Leader>rs :call ReloadAllSnippets()<cr>
 
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
@@ -161,6 +167,11 @@ autocmd FileType html,css,scss,blade EmmetInstall
 " autocmd BufRead,BufNewFile *.html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 
+"/
+"/ SnipMate
+"/
+"Automatically reload snippets on save.
+autocmd BufWritePost *.snippets call ReloadAllSnippets()
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
