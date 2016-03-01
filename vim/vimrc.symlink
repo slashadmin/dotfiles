@@ -18,9 +18,11 @@ Plugin 'CTrlpvim/ctrlp.vim'
 Plugin 'sheerun/vim-polyglot'
 
 " Autocompletion, Snippets
-Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
-Plugin 'msanders/snipmate.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,16 +33,18 @@ filetype plugin indent on    " required
 
 "-------------Settings--------------"
 syntax enable
-set backspace=indent,eol,start			"Make backspace behave like every other editor.
-let mapleader = ',' 			    	"The default is \, but a comma is much better.
-set number					            "Let's activate line numbers.
+set backspace=indent,eol,start			" Make backspace behave like every other editor.
+let mapleader = ',' 			    	" The default is \, but a comma is much better.
+set number					            " Let's activate line numbers.
 set visualbell					        " don't beep
 set noerrorbells                        " don't beep
-set scrolloff=3                         "Start scrolling slightly before the cursor reaches an edge
+set scrolloff=3                         " Start scrolling slightly before the cursor reaches an edge
 set sidescrolloff=5
 set sidescroll=1                        " Scroll sideways a character at a time, rather than a screen at a time
 set clipboard=unnamed                   " Yank into system clipboard
-set autoread                            " display changed files immediately
+set autowriteall                        " Automatically write the file when switching buffers.
+set complete=.,w,b,u 					" Set our desired autocompletion matching.
+set foldlevel=99                        " Unfold all folds by default
 set ignorecase                          " ignore case when searching
 set smartcase                           " ignore case if search pattern is all lowercase,
 set whichwrap=h,l,b,<,>,~,[,]           " Allow motions over line-endings etc
@@ -68,14 +72,13 @@ set shiftround                          " Round indent to nearest multiple of 4
 
 "-------------Visuals--------------"
 set background=dark 
-colorscheme material-theme
+colorscheme solarized
 set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
 set guifont=menlo\ for\ powerline:h16				"Set the default font family and size.
 set linespace=15   				        "Macvim-specific line-height.
-
 set guioptions-=e					"Disable GUI tabs
-"Highlight current tab (material-theme)
-hi TabLineSel gui=bold guifg=white guibg=bg 
+"Set linenumber background to background color
+highlight LineNr guibg=bg 
 
 set guioptions-=l					"Disable Gui scrollbars.
 set guioptions-=L
@@ -156,22 +159,6 @@ let NERDTreeHijackNetrw = 0		"Use dash to open Vinegar instead of NERDTree
 "Make NERDTree easier to toggle.
 nmap <D-1> :NERDTreeToggle<cr>
 
-
-"/
-"/ Emmet 
-"/
-" Use only for html
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,blade EmmetInstall
-" Use Tab completion
-" autocmd BufRead,BufNewFile *.html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-
-"/
-"/ SnipMate
-"/
-"Automatically reload snippets on save.
-autocmd BufWritePost *.snippets call ReloadAllSnippets()
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
