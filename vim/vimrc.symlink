@@ -26,6 +26,7 @@ Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-
 
 " Visual helpers
 Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
+Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin vertical lines
 
 " Language/File specific plugins
 Plugin 'sheerun/vim-polyglot'           " A solid language pack 
@@ -189,6 +190,14 @@ endfunction
 autocmd FileType php inoremap <Leader>pe <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>pe :call PhpExpandClass()<CR>
 
+
+"/
+"/ indentLine 
+"/
+let g:indentLine_color_term = 239       " Line color
+let g:indentLine_color_gui = '#333333'  " GUI line color
+let g:indentLine_enabled = 1            " Display lines by default
+let g:indentLine_char = '|'             " Set line character
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
