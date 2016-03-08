@@ -17,12 +17,25 @@ Plugin 'CTrlpvim/ctrlp.vim'
 " Language packs
 Plugin 'sheerun/vim-polyglot'
 
-" Autocompletion, Snippets
-Plugin 'tpope/vim-surround'
+" Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+
+" Autocompletion etc.
+Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tomtom/tcomment_vim'
+
+" Visual helpers
+Plugin 'gorodinskiy/vim-coloresque'
+
+" HTML specific plugins
+" Plugin 'amirh/HTML-AutoCloseTag'
+
+" PHP specific plugins
+Plugin 'arnaud-lb/vim-php-namespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,8 +127,18 @@ nmap <C-L> <C-W><C-L>
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 "Make it easy to edit snippet files.
 nmap <Leader>es :e ~/.vim/snippets/
-"shortcut to reload snippets
-nmap <Leader>rs :call ReloadAllSnippets()<cr>
+
+"Make it easy to run phpunit
+nmap <Leader>t :!./vendor/bin/phpunit<cr>
+nmap <Leader>tt :!./vendor/bin/phpunit --filter=
+
+"Laravel Artisan commands
+nmap <Leader>a :!php artisan 
+nmap <Leader>am :!php artisan make:
+
+"Composer commands
+nmap <Leader>cd :!composer dump-autoload<cr>
+nmap <Leader>cu :!composer update<cr>
 
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
@@ -139,8 +162,6 @@ noremap! <Right> <Esc>
 
 
 " -------------Abbreviations (Shortcuts)-------------"
-ab art !php artisan
-
 
 
 
@@ -159,6 +180,26 @@ map <D-p> :CtrlP<cr>
 let NERDTreeHijackNetrw = 0		"Use dash to open Vinegar instead of NERDTree
 "Make NERDTree easier to toggle.
 nmap <D-1> :NERDTreeToggle<cr>
+
+
+"/
+"/ vim-php-namespace
+"/
+" Import classes (add use statements)
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>pu <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>pu :call PhpInsertUse()<CR>
+
+" Make class names fully qualified
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>pe <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>pe :call PhpExpandClass()<CR>
 
 
 "-------------Auto-Commands--------------"
