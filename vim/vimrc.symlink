@@ -1,45 +1,41 @@
-set nocompatible         				"We want the latest Vim settings/options.
+set nocompatible         				" We want the latest Vim settings/options.
 
 "-------------Plugins--------------"
 filetype off                			" required
-
-"Set the runtime path to include Vundle and initialize.
+" Set the runtime path to include Vundle and initialize.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
 
-" Navigation
-Plugin 'tpope/vim-vinegar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'CTrlpvim/ctrlp.vim'
 
-" Language packs
-Plugin 'sheerun/vim-polyglot'
+" Navigation
+Plugin 'tpope/vim-vinegar'              " sidebar like directory browser
+Plugin 'scrooloose/nerdtree'            " A tree explorer plugin
+Plugin 'CTrlpvim/ctrlp.vim'             " Fuzzy file, buffer, mru, tag, etc finder
 
 " Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'   " Snipmate dependency - interpret a file by function and cache file automatically
+Plugin 'tomtom/tlib_vim'                " Snipmate dependency - Some utility functions
+Plugin 'garbas/vim-snipmate'            " implements some of TextMate's snippets features
 
 " Autocompletion etc.
-Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
+Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
+Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
+Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-plugin that also handles embedded filetypes
 
 " Visual helpers
-Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
 
-" HTML specific plugins
-" Plugin 'amirh/HTML-AutoCloseTag'
+" Language/File specific plugins
+Plugin 'sheerun/vim-polyglot'           " A solid language pack 
+" Plugin 'amirh/HTML-AutoCloseTag'      " Automatically closes HTML tags once you finish typing them
+Plugin 'arnaud-lb/vim-php-namespace'    " types 'use' statements for you (Needs Ctags)
 
-" PHP specific plugins
-Plugin 'arnaud-lb/vim-php-namespace'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on               " required
 
 
 
@@ -52,7 +48,7 @@ set number					            " Let's activate line numbers.
 set visualbell					        " don't beep
 set noerrorbells                        " don't beep
 set scrolloff=3                         " Start scrolling slightly before the cursor reaches an edge
-set sidescrolloff=5
+set sidescrolloff=5                     " Start scrolling slightly before the cursor reaches an edge
 set sidescroll=1                        " Scroll sideways a character at a time, rather than a screen at a time
 set clipboard=unnamed                   " Yank into system clipboard
 set autowriteall                        " Automatically write the file when switching buffers.
@@ -85,16 +81,17 @@ set shiftround                          " Round indent to nearest multiple of 4
 
 "-------------Visuals--------------"
 set background=dark 
-let g:sierra_Twilight = 1               "Use darker sierra colorscheme
-colorscheme sierra
-set t_CO=256							"Use 256 colors. This is useful for Terminal Vim.
-set guifont=menlo\ for\ powerline:h16				"Set the default font family and size.
-set linespace=15   				        "Macvim-specific line-height.
-set guioptions-=e					"Disable GUI tabs
-"Set linenumber background to background color
+let g:sierra_Twilight = 1               " Use darker sierra colorscheme
+colorscheme sierra                      " Use sierra colorscheme
+set t_CO=256							" Use 256 colors. This is useful for Terminal Vim.
+set guifont=menlo\ for\ powerline:h16	" Set the default font family and size.
+set linespace=15   				        " Macvim-specific line-height.
+set guioptions-=e					     "Disable GUI tabs
+" Set linenumber background to background color
 highlight LineNr guibg=bg 
 
-set guioptions-=l					"Disable Gui scrollbars.
+" Disable Gui scrollbars.
+set guioptions-=l					
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
@@ -103,17 +100,17 @@ set guioptions-=R
 
 
 "-------------Search--------------"
-set hlsearch							"Highlight all matched terms.
-set incsearch							"Incrementally highlight, as we type.
+set hlsearch							" Highlight all matched terms.
+set incsearch							" Incrementally highlight, as we type.
 
 
 
 
 "-------------Split Management--------------"
-set splitbelow 							"Make splits default to below...
-set splitright							"And to the right. This feels more natural.
+set splitbelow 							" Make splits default to below...
+set splitright							" ...and to the right.
 
-"We'll set simpler mappings to switch between splits.
+" Simpler mappings to switch between splits.
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
@@ -123,32 +120,27 @@ nmap <C-L> <C-W><C-L>
 
 
 "-------------Mappings--------------"
-"Make it easy to edit the Vimrc file.
+" Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
-"Make it easy to edit snippet files.
+" Make it easy to edit snippet files.
 nmap <Leader>es :e ~/.vim/snippets/
 
-"Make it easy to run phpunit
+" Make it easy to run phpunit
 nmap <Leader>t :!./vendor/bin/phpunit<cr>
 nmap <Leader>tt :!./vendor/bin/phpunit --filter=
 
-"Laravel Artisan commands
+" Laravel Artisan commands
 nmap <Leader>a :!php artisan 
 nmap <Leader>am :!php artisan make:
 
-"Composer commands
+" Composer commands
 nmap <Leader>cd :!composer dump-autoload<cr>
 nmap <Leader>cu :!composer update<cr>
 
-"Add simple highlight removal.
+" Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
-" jj to throw you into normal mode from insert mode
-inoremap jj <esc>
-" jk to throw you into normal mode from insert mode
-inoremap jk <esc>
-
-"Disable Arrow Keys
+"Disable Arrow Keys (Hard Mode)
 noremap  <Up> ""
 noremap! <Up> <Esc>
 noremap  <Down> ""
@@ -158,10 +150,6 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-
-
-
-" -------------Abbreviations (Shortcuts)-------------"
 
 
 
