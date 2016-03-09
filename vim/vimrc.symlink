@@ -34,7 +34,6 @@ Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin
 
 " Language/File specific plugins
 Plugin 'sheerun/vim-polyglot'           " A solid language pack 
-" Plugin 'amirh/HTML-AutoCloseTag'      " Automatically closes HTML tags once you finish typing them
 Plugin 'arnaud-lb/vim-php-namespace'    " types 'use' statements for you (Needs Ctags)
 
 
@@ -64,12 +63,13 @@ set smartcase                           " ignore case if search pattern is all l
 set whichwrap=h,l,b,<,>,~,[,]           " Allow motions over line-endings etc
 autocmd TabEnter * stopinsert           " Start new tabs in normal mode
 " Allow vertical motions in long lines
-nnoremap k gk 
-nnoremap j gj
+noremap j gj
+noremap k gk
 " Swap files out of the project root
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
-
+" Files and directories to hide
+let g:netrw_list_hide='.DS_Store'
 
 
 
@@ -216,3 +216,4 @@ augroup END
 "-------------NOTES--------------"
 " :Ag <searchterm>                        " Search in whole project
 " :Gsearch                                " Project wide Search and replace in whole project
+" With text selected [S]                  " Add surrounding tag/quote/whatever
