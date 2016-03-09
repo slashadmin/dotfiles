@@ -13,12 +13,16 @@ Plugin 'tpope/vim-vinegar'              " sidebar like directory browser
 Plugin 'scrooloose/nerdtree'            " A tree explorer plugin
 Plugin 'CTrlpvim/ctrlp.vim'             " Fuzzy file, buffer, mru, tag, etc finder
 
+" Search and Replace
+Plugin 'rking/ag.vim'                   " plugin for the_silver_searcher, 'ag'
+Plugin 'skwp/greplace.vim'              " Global search and replace
+
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'   " Snipmate dependency - interpret a file by function and cache file automatically
 Plugin 'tomtom/tlib_vim'                " Snipmate dependency - Some utility functions
 Plugin 'garbas/vim-snipmate'            " implements some of TextMate's snippets features
 
-" Autocompletion etc.
+" Autocompletion, Formatting, etc.
 Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
@@ -207,3 +211,8 @@ augroup autosourcing
 	autocmd BufWritePost .vimrc source %
 augroup END
 
+
+
+"-------------NOTES--------------"
+" :Ag <searchterm>                        " Search in whole project
+" :Gsearch                                " Project wide Search and replace in whole project
