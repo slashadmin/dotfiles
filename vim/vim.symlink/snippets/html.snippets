@@ -1,0 +1,104 @@
+snippet html
+	<!doctype html>
+	<html class="no-js" lang="${1:de}">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="x-ua-compatible" content="ie=edge">
+			<title>${2}</title>
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+		</head>
+		<body>
+			${0}
+		</body>
+	</html>
+
+snippet h
+	<h${1}>${0}<\h${1}>
+
+snippet h.
+	<h${1} class="${2}">${0}<\h${1}>
+
+snippet a
+	<a href="${1:#}">${0}</a>
+
+snippet a.
+	<a class="${1}" href="${2:#}">${0}</a>
+
+snippet img
+	<img src="${1}" alt="${2:http://placehold.it/800x600}">
+
+snippet img.
+	<img class="${1}" src="${2:http://placehold.it/800x600}" alt="${3}">
+
+snippet ul
+	<ul>
+		<li>${0}</li>
+	</ul>
+
+snippet form
+	<form action="${1}" method="${2:POST}">
+		${0}
+	</form>
+
+snippet input
+	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}">
+
+snippet input.
+	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}">
+
+snippet input:text
+	<input type="text" name="${1}" id="${2:$1}" value="${3}">
+	
+snippet input:submit
+	<input type="submit" name="${1}" id="${2:$1}" value="${3}">
+
+snippet input:hidden
+	<input type="hidden" name="${1}" id="${2:$1}" value="${3}">
+
+snippet input:image
+	<input type="image" name="${1}" id="${2:$1}" src="${3}" alt="${4}">
+
+snippet input:checkbox
+	<input type="checkbox" name="${1}" id="${2:$1}">
+
+snippet input:radio
+	<input type="radio" name="${1}" id="${2:$1}">
+
+snippet button
+	<button type="submit" name="${1}" id="${2:$1}" value="${3}">${0}</button>
+
+snippet label
+	<label for="${2:$1}">${1}</label>
+
+snippet select
+	<select name="${3:$2}" id="${4:$2}">
+		<option value="${5}">${0:$5}</option>
+	</select>
+
+snippet form.
+	<form class="${1}" action="${2}" method="${3:POST}">
+		${0}
+	</form>
+
+snippet .
+	<div class="${1}">
+		${0}
+	</div>
+
+snippet <
+	<${1}>${0}<\${1}>
+
+snippet <.
+	<${1} class="${2}">${0}<\${1}>
+
+snippet <<
+	<${1}>
+		${0}
+	<\${1}>
+
+snippet <<.
+	<${1} class="${2}">
+		${0}
+	<\${1}>
+
