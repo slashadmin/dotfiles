@@ -176,6 +176,13 @@ nmap <D-1> :NERDTreeToggle<cr>
 
 
 "/
+"/ Greplace
+"/
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+
+"/
 "/ vim-php-namespace
 "/
 " Import classes (add use statements)
