@@ -22,6 +22,7 @@ alias hhf='hidehiddenfiles';
 
 # Instant Server for Current Directory - https://gist.github.com/JeffreyWay/1525217
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
-
 # Open /etc/hosts file
 alias hosts="sudo vim /etc/hosts"
+# Laravel Homestead shortcut
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
