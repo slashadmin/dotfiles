@@ -24,5 +24,7 @@ alias hhf='hidehiddenfiles';
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 # Open /etc/hosts file
 alias hosts="sudo vim /etc/hosts"
+alias cl="clear"
 # Laravel Homestead shortcut
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+
