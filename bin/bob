@@ -1,0 +1,84 @@
+#!/bin/bash
+
+### VARS ###
+repository=git@github.com:slashadmin/frontend-template.git
+npmcmd="npm install --save-dev"
+npm_dependencies=( \
+    'glob' 'grunt' 'jit-grunt' \
+    'grunt-contrib-watch' \
+    'grunt-contrib-uglify' \
+    'grunt-contrib-jshint' \
+    'grunt-contrib-imagemin' \
+    'grunt-newer' \
+    'grunt-sass' \
+    'grunt-rsync' \
+    'grunt-browser-sync' \
+    'grunt-postcss' \
+    'autoprefixer' \
+    )
+bowercmd="bower install -S"
+bower_dependencies=( \
+    'inuit-starter-kit' \
+    )
+tmp_folder=_tmp_frontend_template
+current_folder=${PWD##*/}
+
+
+### FUNCTIONS ###
+ask () {
+    read -p "$1 ($2): " value
+    value=${value:-$2}
+    echo $value
+}
+
+setVariableInFile() {
+    sed -i '' -e "s,$1,$2,g" $3
+}
+
+
+### ASK FOR INPUT ###
+project_name=$(ask "Project name" "$current_folder")
+src_path=$(ask "Src path" "src")
+dist_path=$(ask "Dist path" "dist")
+
+### CLONE TEMPLATE FILES ###
+echo "Cloning Repository"
+git clone $repository $tmp_folder #DEV: cp -r ../frontend-template ./$tmp_folder
+
+### SET VARIABLES IN TEMPLATES ###
+echo "Setting variables"
+setVariableInFile 'project_name' $project_name $tmp_folder/template/bower.json
+setVariableInFile 'project_name' $project_name $tmp_folder/template/package.json
+setVariableInFile "src: \"src\"" "src: \"$src_path\"" $tmp_folder/template/Gruntfile.js
+setVariableInFile "dist: \"dist\"" "dist: \"$dist_path\"" $tmp_folder/template/Gruntfile.js
+
+# variables=( 'project_name' 'src_path' 'dist_path')
+# findcmd="find -E ./$tmp_folder -type f -regex '.*\.(js|json|scss)' -exec sed -i ''"
+# for element in ${variables[@]}
+# do
+#     findcmd="$findcmd -e 's,__${element}__,${!element},g'"
+# done
+# eval "$findcmd {} +"
+
+### COPY FILES TO THEIR DESTINATION ###
+echo "Copy files"
+cp $tmp_folder/template/*.* .
+mkdir -p ./$src_path
+mv ./$tmp_folder/template/src/* ./$src_path
+mkdir -p ./$dist_path/css
+mkdir -p ./$dist_path/js
+mkdir -p ./$dist_path/img
+rm -rf $tmp_folder
+
+### INSTALL DEPENDENCIES ###
+for element in ${bower_dependencies[@]}
+do
+    bowercmd="$bowercmd ${element}"
+done
+eval $bowercmd
+
+for element in ${npm_dependencies[@]}
+do
+    npmcmd="$npmcmd ${element} "
+done
+eval $npmcmd
