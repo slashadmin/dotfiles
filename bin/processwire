@@ -1,0 +1,6 @@
+#!/bin/sh
+
+curl -o __tmp-processwire-download.zip -LOk https://github.com/ryancramerdesign/ProcessWire/archive/master.zip
+unzip __tmp-processwire-download.zip
+rm -f __tmp-processwire-download.zip
+mv ProcessWire-master $1 
