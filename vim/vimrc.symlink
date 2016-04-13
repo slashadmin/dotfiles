@@ -70,7 +70,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 " Files and directories to hide
 let g:netrw_list_hide='.DS_Store'
-
+set synmaxcol=250                       "limit syntax highligthing to 200 chars
 
 
 " -------------Tabs, indentation and lines-------------"
