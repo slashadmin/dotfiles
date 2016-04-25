@@ -155,6 +155,8 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
+" toggle fullscreen mode
+map <C-F> :set invfu<CR>
 
 
 
@@ -224,3 +226,4 @@ augroup END
 " :Ag <searchterm>                        " Search in whole project
 " :Gsearch                                " Project wide Search and replace in whole project
 " With text selected [S]                  " Add surrounding tag/quote/whatever
+" :%s/foo/bar/g                           " Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
