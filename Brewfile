@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 brew 'git'
 brew 'wget'
 brew 'curl'
+brew 'node'
 
 # Vim
 brew 'ack'
