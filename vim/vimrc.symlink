@@ -91,7 +91,7 @@ colorscheme sierra                      " Use sierra colorscheme
 set t_CO=256							" Use 256 colors. This is useful for Terminal Vim.
 set guifont=menlo\ for\ powerline:h16	" Set the default font family and size.
 set linespace=15   				        " Macvim-specific line-height.
-set guioptions-=e					     "Disable GUI tabs
+set guioptions-=e					    " Disable GUI tabs
 " Set linenumber background to background color
 highlight LineNr guibg=bg 
 
@@ -157,6 +157,13 @@ noremap! <Right> <Esc>
 
 " toggle fullscreen mode
 map <C-F> :set invfu<CR>
+
+
+
+
+"-------------Syntax--------------"
+au BufRead,BufNewFile *.inc set syntax=php      " use php syntax for *.inc files
+
 
 
 
