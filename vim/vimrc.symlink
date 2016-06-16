@@ -221,7 +221,8 @@ augroup autosourcing
 	autocmd BufWritePost .vimrc source %
 augroup END
 
-
+" Save on leving insert mode
+autocmd InsertLeave * write
 
 "-------------NOTES--------------"
 " :Ag <searchterm>                        " Search in whole project
