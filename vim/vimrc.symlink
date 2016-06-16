@@ -27,6 +27,7 @@ Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
 Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-plugin that also handles embedded filetypes
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format
 
 " Visual helpers
 Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
@@ -34,7 +35,6 @@ Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin
 
 " Language/File specific plugins
 Plugin 'sheerun/vim-polyglot'           " A solid language pack 
-Plugin 'arnaud-lb/vim-php-namespace'    " types 'use' statements for you (Needs Ctags)
 
 
 " All of your Plugins must be added before the following line
@@ -70,7 +70,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 " Files and directories to hide
 let g:netrw_list_hide='.DS_Store'
-set synmaxcol=250                       "limit syntax highligthing to 200 chars
+set synmaxcol=250                       "limit syntax highligthing to 250 chars
 
 
 " -------------Tabs, indentation and lines-------------"
@@ -158,7 +158,8 @@ noremap! <Right> <Esc>
 " toggle fullscreen mode
 map <C-F> :set invfu<CR>
 
-
+" Quit insert mode using 'jj'
+inoremap jj <ESC>
 
 
 "-------------Syntax--------------"
@@ -192,32 +193,25 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 
 
 "/
-"/ vim-php-namespace
-"/
-" Import classes (add use statements)
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>pu <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>pu :call PhpInsertUse()<CR>
-
-" Make class names fully qualified
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-autocmd FileType php inoremap <Leader>pe <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>pe :call PhpExpandClass()<CR>
-
-
-"/
 "/ indentLine 
 "/
 let g:indentLine_color_term = 239       " Line color
 let g:indentLine_color_gui = '#333333'  " GUI line color
 let g:indentLine_enabled = 1            " Display lines by default
 let g:indentLine_char = '|'             " Set line character
+
+
+"/
+"/ Sparkup
+"/ 
+augroup sparkup_types
+  " Remove ALL autocommands of the current group.
+  autocmd!
+  " Add sparkup to new filetypes
+  autocmd FileType php,inc runtime! ftplugin/html/sparkup.vim
+augroup END
+
+
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
@@ -234,3 +228,4 @@ augroup END
 " :Gsearch                                " Project wide Search and replace in whole project
 " With text selected [S]                  " Add surrounding tag/quote/whatever
 " :%s/foo/bar/g                           " Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+" *                                       " Search for word under the cursor
