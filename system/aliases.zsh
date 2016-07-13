@@ -9,6 +9,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias cl="clear"
+
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
@@ -22,9 +24,15 @@ alias hhf='hidehiddenfiles';
 
 # Instant Server for Current Directory - https://gist.github.com/JeffreyWay/1525217
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
+
 # Open /etc/hosts file
 alias hosts="sudo vim /etc/hosts"
-alias cl="clear"
+
+# Edit dotfiles shortcut
+alias e.="e ~/.dotfiles"
+
+# Flush DNS cache
+alias flushdnscache="sudo killall -HUP mDNSResponder"
+
 # Laravel Homestead shortcut
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
-
