@@ -62,6 +62,7 @@ set ignorecase                          " ignore case when searching
 set smartcase                           " ignore case if search pattern is all lowercase,
 set whichwrap=h,l,b,<,>,~,[,]           " Allow motions over line-endings etc
 autocmd TabEnter * stopinsert           " Start new tabs in normal mode
+set showtabline=2                       " Always show tab bar (even for single file)
 " Allow vertical motions in long lines
 noremap j gj
 noremap k gk
