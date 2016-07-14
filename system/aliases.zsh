@@ -28,8 +28,10 @@ alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 # Open /etc/hosts file
 alias hosts="sudo vim /etc/hosts"
 
-# Edit dotfiles shortcut
-alias e.="e ~/.dotfiles"
+# dotfiles shortcuts
+alias e.="e $HOME/.dotfiles"
+alias cd.="cd $HOME/.dotfiles"
+alias pull.="(cd $HOME/.dotfiles && git pull)"
 
 # Flush DNS cache
 alias flushdnscache="sudo killall -HUP mDNSResponder"
