@@ -1,0 +1,6 @@
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcb='docker-compose build'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias drm='docker rm'
