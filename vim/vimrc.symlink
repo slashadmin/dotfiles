@@ -162,6 +162,15 @@ map <C-F> :set invfu<CR>
 " Quit insert mode using 'jj'
 inoremap jj <ESC>
 
+" Quick way to switch filetype 
+nmap <Leader>h :set ft=html<cr>
+nmap <Leader>p :set ft=php<cr>
+
+" Make it easy to edit the Vimrc file.
+nmap <Leader>o :!open .<cr><cr>
+
+
+
 
 "-------------Syntax--------------"
 au BufRead,BufNewFile *.inc set syntax=php      " use php syntax for *.inc files
@@ -225,9 +234,11 @@ augroup END
 " Save on leving insert mode
 autocmd InsertLeave * write
 
-"-------------NOTES--------------"
+
+
+"-------------Notes--------------"
 " :Ag <searchterm>                        " Search in whole project
 " :Gsearch                                " Project wide Search and replace in whole project
-" With text selected [S]                  " Add surrounding tag/quote/whatever
 " :%s/foo/bar/g                           " Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
 " *                                       " Search for word under the cursor
+" :PluginUpdate                           " Update all plugins
