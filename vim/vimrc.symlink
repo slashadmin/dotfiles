@@ -166,7 +166,10 @@ inoremap jj <ESC>
 nmap <Leader>h :set ft=html<cr>
 nmap <Leader>p :set ft=php<cr>
 
-" Make it easy to edit the Vimrc file.
+" Make it easy to find and replace text
+nmap <Leader>r :%s/
+
+" Make it easy to open current project in finder
 nmap <Leader>o :!open .<cr><cr>
 
 
