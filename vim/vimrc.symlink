@@ -136,8 +136,7 @@ nmap <Leader>t :!./vendor/bin/phpunit<cr>
 nmap <Leader>tt :!./vendor/bin/phpunit --filter=
 
 " Laravel Artisan commands
-nmap <Leader>a :!php artisan 
-nmap <Leader>am :!php artisan make:
+nmap <Leader>art :!php artisan 
 
 " Composer commands
 nmap <Leader>cd :!composer dump-autoload<cr>
