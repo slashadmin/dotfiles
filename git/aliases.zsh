@@ -7,3 +7,4 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gi='git init'
 alias gl='git log --graph --oneline --decorate --all'
+alias nah="git reset --hard; git clean -df;"
