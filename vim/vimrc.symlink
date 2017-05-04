@@ -30,6 +30,7 @@ Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format
 
 " Visual helpers
+Plugin 'nightsense/vim-crunchbang'      " Color scheme
 Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
 Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin vertical lines
 
@@ -87,20 +88,26 @@ set shiftround                          " Round indent to nearest multiple of 4
 
 "-------------Visuals--------------"
 set background=dark 
+colorscheme crunchbang                  " Set colorscheme
 
-let g:sierra_Twilight = 1               " Use darker sierra colorscheme
-colorscheme sierra                      " Use sierra colorscheme
+" adjustments for crunchbang colorscheme
+hi Normal guibg=#202426                 " Slightly darker background color
+" adjust tab bar styling
+hi TabLine     gui=none guibg=#272c2d
+hi TabLineFill gui=none guibg=#272c2d
+hi TabLineSel  gui=none guibg=bg guifg=#ffffff
+
 
 " Set the default font family and size.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Source\ Code\ Pro\ 15
+        set guifont=Inconsolata\ 18
     elseif has("gui_macvim")
-        set guifont=Source\ Code\ Pro:h15
+        set guifont=Inconsolata:h18
     endif
 endif
 
-set linespace=14   				        " Macvim-specific line-height.
+set linespace=10   				        " Macvim-specific line-height.
 set guioptions-=e					    " Disable GUI tabs
 set guioptions-=m                       " Disable menu bar
 set guioptions-=T                       " Disable toolbar
@@ -167,7 +174,7 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-" toggle fullscreen mode
+" toggle fullscreen mode (MacVim)
 map <C-F> :set invfu<CR>
 
 " Quit insert mode using 'jj'
