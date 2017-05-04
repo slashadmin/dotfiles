@@ -87,12 +87,24 @@ set shiftround                          " Round indent to nearest multiple of 4
 
 "-------------Visuals--------------"
 set background=dark 
+
 let g:sierra_Twilight = 1               " Use darker sierra colorscheme
 colorscheme sierra                      " Use sierra colorscheme
-set t_CO=256							" Use 256 colors. This is useful for Terminal Vim.
-set guifont=menlo\ for\ powerline:h16	" Set the default font family and size.
-set linespace=15   				        " Macvim-specific line-height.
+
+" Set the default font family and size.
+if has("gui_running")
+    if has("gui_gtk2")
+        set guifont=Source\ Code\ Pro\ 15
+    elseif has("gui_macvim")
+        set guifont=Source\ Code\ Pro:h15
+    endif
+endif
+
+set linespace=14   				        " Macvim-specific line-height.
 set guioptions-=e					    " Disable GUI tabs
+set guioptions-=m                       " Disable menu bar
+set guioptions-=T                       " Disable toolbar
+
 " Set linenumber background to background color
 highlight LineNr guibg=bg 
 
