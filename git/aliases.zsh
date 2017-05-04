@@ -9,3 +9,4 @@ alias gi='git init'
 alias gg='git diff'
 alias gl='git log --graph --oneline --decorate --all'
 alias nah="git reset --hard; git clean -df;"
+alias gundo="git reset HEAD~"
