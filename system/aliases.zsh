@@ -32,9 +32,3 @@ alias hosts="sudo vim /etc/hosts"
 alias e.="e $HOME/.dotfiles"
 alias cd.="cd $HOME/.dotfiles"
 alias pull.="(cd $HOME/.dotfiles && git pull)"
-
-# Flush DNS cache
-alias flushdnscache="sudo killall -HUP mDNSResponder"
-
-# Laravel Homestead shortcut
-alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
