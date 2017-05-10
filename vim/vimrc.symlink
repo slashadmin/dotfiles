@@ -16,6 +16,8 @@ Plugin 'CTrlpvim/ctrlp.vim'             " Fuzzy file, buffer, mru, tag, etc find
 " Search and Replace
 Plugin 'rking/ag.vim'                   " plugin for the_silver_searcher, 'ag'
 Plugin 'skwp/greplace.vim'              " Global search and replace
+Plugin 'terryma/vim-multiple-cursors'   " Sublime Text like Multiple cursors
+Plugin 'matze/vim-move'                 " Move blocks of text around
 
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'   " Snipmate dependency - interpret a file by function and cache file automatically
@@ -91,8 +93,7 @@ set background=dark
 colorscheme crunchbang                  " Set colorscheme
 
 " adjustments for crunchbang colorscheme
-hi Normal guibg=#202426                 " Slightly darker background color
-" adjust tab bar styling
+hi Normal guibg=#263238
 hi TabLine     gui=none guibg=#272c2d
 hi TabLineFill gui=none guibg=#272c2d
 hi TabLineSel  gui=none guibg=bg guifg=#ffffff
@@ -241,6 +242,13 @@ augroup sparkup_types
   " Add sparkup to new filetypes
   autocmd FileType php,inc runtime! ftplugin/html/sparkup.vim
 augroup END
+
+
+"/
+"/ vim-move
+"/ 
+let g:move_key_modifier = 'C'
+
 
 
 
