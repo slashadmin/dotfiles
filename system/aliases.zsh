@@ -11,6 +11,9 @@ alias ....="cd ../../.."
 
 alias cl="clear"
 
+# Current external ip address
+alias ip="curl ipinfo.io/ip"
+
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
