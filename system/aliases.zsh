@@ -35,3 +35,6 @@ alias hosts="sudo vim /etc/hosts"
 alias e.="e $HOME/.dotfiles"
 alias cd.="cd $HOME/.dotfiles"
 alias pull.="(cd $HOME/.dotfiles && git pull)"
+
+# Notes
+alias notes="e $HOME/Dropbox/Settings/notes.md"
