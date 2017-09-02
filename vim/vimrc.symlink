@@ -38,6 +38,7 @@ Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin
 
 " Language/File specific plugins
 Plugin 'sheerun/vim-polyglot'           " A solid language pack 
+Plugin 'posva/vim-vue'                  " Syntax highlighting for Vue components.
 
 
 " All of your Plugins must be added before the following line
@@ -247,7 +248,7 @@ augroup END
 "/
 "/ vim-move
 "/ 
-let g:move_key_modifier = 'C'
+" let g:move_key_modifier = 'C'
 
 
 
@@ -271,3 +272,4 @@ autocmd InsertLeave * write
 " :%s/foo/bar/g                           " Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
 " *                                       " Search for word under the cursor
 " :PluginUpdate                           " Update all plugins
+" :Ex                                     " Open directory listing
