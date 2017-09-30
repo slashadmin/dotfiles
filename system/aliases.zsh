@@ -10,6 +10,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias cl="clear"
+alias c="cd ~/Code"
 
 # Current external ip address
 alias ip="curl ipinfo.io/ip"
