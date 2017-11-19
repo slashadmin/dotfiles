@@ -17,17 +17,13 @@ Plugin 'skwp/greplace.vim'              " Global search and replace
 Plugin 'terryma/vim-multiple-cursors'   " Sublime Text like Multiple cursors
 Plugin 'matze/vim-move'                 " Move blocks of text around
 
-" Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'   " Snipmate dependency - interpret a file by function and cache file automatically
-Plugin 'tomtom/tlib_vim'                " Snipmate dependency - Some utility functions
-Plugin 'garbas/vim-snipmate'            " implements some of TextMate's snippets features
-
-" Autocompletion, Formatting, etc.
+" Autocompletion, Formatting, Snippets etc.
+Plugin 'SirVer/ultisnips'               " The ultimate snippet solution for Vim. 
 Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
 Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-plugin that also handles embedded filetypes
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format (aka. 'Emmet')
 
 " Visual helpers
 Plugin 'nightsense/vim-crunchbang'      " Color scheme
@@ -251,11 +247,18 @@ augroup END
 " let g:move_key_modifier = 'C'
 
 
+"/
+"/ ultisnips
+"/ 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
 
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
-
 augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %
