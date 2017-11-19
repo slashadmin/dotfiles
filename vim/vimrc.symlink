@@ -86,6 +86,8 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set shiftround                          " Round indent to nearest multiple of 4
+set autoindent
+filetype plugin indent on
 
 
 
