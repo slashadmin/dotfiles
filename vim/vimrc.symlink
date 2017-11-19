@@ -78,6 +78,8 @@ let g:netrw_list_hide= '.DS_Store,^\.\.\=/\=$'
 set synmaxcol=250                       "limit syntax highligthing to 250 chars
 
 
+
+
 " -------------Tabs, indentation and lines-------------"
 " 4 spaces please
 set expandtab
@@ -94,11 +96,10 @@ set background=dark
 colorscheme crunchbang                  " Set colorscheme
 
 " adjustments for crunchbang colorscheme
-hi Normal guibg=#263238
+hi Normal      guibg=#263238
 hi TabLine     gui=none guibg=#272c2d
 hi TabLineFill gui=none guibg=#272c2d
 hi TabLineSel  gui=none guibg=bg guifg=#ffffff
-
 
 " Set the default font family and size.
 if has("gui_running")
