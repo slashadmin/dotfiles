@@ -1,3 +1,6 @@
+"
+"  This must be put in ~/.gvimrc, not ~/.vimrc! (Apparently ~/.vimrc is read too early.)
+"
 if has("gui_macvim")
     "Disable the print key for Macvim
     macmenu &File.Print key=<nop>
