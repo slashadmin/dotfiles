@@ -9,8 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 
 " Navigation
-Plugin 'tpope/vim-vinegar'              " sidebar like directory browser
-Plugin 'scrooloose/nerdtree'            " A tree explorer plugin
 Plugin 'CTrlpvim/ctrlp.vim'             " Fuzzy file, buffer, mru, tag, etc finder
 
 " Search and Replace
@@ -73,8 +71,10 @@ noremap k gk
 " Swap files out of the project root
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
-" Files and directories to hide
-let g:netrw_list_hide='.DS_Store'
+" Hide banner in netrw
+let g:netrw_banner = 0
+" Files and directories to hide in netrw (^\.\.\=/\=$ removes /. and /..)
+let g:netrw_list_hide= '.DS_Store,^\.\.\=/\=$'
 set synmaxcol=250                       "limit syntax highligthing to 250 chars
 
 
@@ -152,6 +152,9 @@ nmap <Leader>ev :tabedit $MYVIMRC<cr>
 " Make it easy to edit snippet files.
 nmap <Leader>es :e ~/.vim/snippets/
 
+" open netrw using [-]
+nmap - :Ex<cr>
+
 " Make it easy to run phpunit
 nmap <Leader>t :!./vendor/bin/phpunit<cr>
 nmap <Leader>tt :!./vendor/bin/phpunit --filter=
@@ -208,14 +211,6 @@ au BufRead,BufNewFile *.inc set syntax=php      " use php syntax for *.inc files
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store|bower_components\|vendor\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 map <D-p> :CtrlP<cr>
-
-
-"/
-"/ NERDTree 
-"/
-let NERDTreeHijackNetrw = 0		"Use dash to open Vinegar instead of NERDTree
-"Make NERDTree easier to toggle.
-nmap <D-1> :NERDTreeToggle<cr>
 
 
 "/
