@@ -23,7 +23,7 @@ Plugin 'honza/vim-snippets'             " Default snippets
 Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
-Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-plugin that also handles embedded filetypes
+Plugin 'tpope/vim-commentary'           " Comment stuff out
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format (aka. 'Emmet')
 
 " Visual helpers
