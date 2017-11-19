@@ -34,6 +34,7 @@ Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin
 " Language/File specific plugins
 Plugin 'sheerun/vim-polyglot'           " A solid language pack 
 Plugin 'posva/vim-vue'                  " Syntax highlighting for Vue components.
+Plugin 'mstruebing/vim.typoscript'      " Syntax highlighting for TypoScript / Fusion files
 
 
 " All of your Plugins must be added before the following line
@@ -203,6 +204,7 @@ nmap < <<
 
 "-------------Syntax--------------"
 au BufRead,BufNewFile *.inc set syntax=php      " use php syntax for *.inc files
+au BufRead,BufNewFile *.fusion set filetype=typoscript
 
 
 
@@ -255,6 +257,11 @@ let g:move_key_modifier = 'C'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"/
+"/ commentary
+"/ 
+autocmd FileType typoscript setlocal commentstring=#\ %s
 
 
 
