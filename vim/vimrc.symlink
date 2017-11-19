@@ -276,3 +276,4 @@ augroup END
 " *                                       " Search for word under the cursor
 " :PluginUpdate                           " Update all plugins
 " :Ex                                     " Open directory listing
+" <ctrl> + n                              " Multiple cursors keymapping
