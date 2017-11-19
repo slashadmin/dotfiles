@@ -103,13 +103,13 @@ hi TabLineSel  gui=none guibg=bg guifg=#ffffff
 " Set the default font family and size.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 18
+        set guifont=Inconsolata\ 17
     elseif has("gui_macvim")
-        set guifont=Inconsolata:h18
+        set guifont=Inconsolata:h17
     endif
 endif
 
-set linespace=10   				        " Macvim-specific line-height.
+set linespace=8   				        " Macvim-specific line-height.
 set guioptions-=e					    " Disable GUI tabs
 set guioptions-=m                       " Disable menu bar
 set guioptions-=T                       " Disable toolbar
