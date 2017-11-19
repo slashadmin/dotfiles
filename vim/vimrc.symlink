@@ -96,15 +96,15 @@ colorscheme hybrid_material             " Set colorscheme
 hi TabLine     gui=none guibg=#37474F
 hi TabLineFill gui=none guibg=#37474F
 hi TabLineSel  gui=none guibg=#5F875F guifg=#ffffff
-let g:enable_bold_font = 1              " code like functions and language controls in bold
 let g:enable_italic_font = 1            " comments in italic
 
 " Set the default font family and size.
+" Download font here https://www.marksimonson.com/fonts/view/anonymous-pro
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 17
+        set guifont=Anonymous\ Pro\ Minus\ 18
     elseif has("gui_macvim")
-        set guifont=Inconsolata:h17
+        set guifont=Anonymous\ Pro\ Minus:h18
     endif
 endif
 
