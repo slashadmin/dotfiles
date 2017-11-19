@@ -27,7 +27,7 @@ Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format (aka. 'Emmet')
 
 " Visual helpers
-Plugin 'nightsense/vim-crunchbang'      " Color scheme
+Plugin 'kristijanhusak/vim-hybrid-material' " Color scheme
 Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
 Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin vertical lines
 
@@ -90,13 +90,14 @@ set shiftround                          " Round indent to nearest multiple of 4
 
 "-------------Visuals--------------"
 set background=dark 
-colorscheme crunchbang                  " Set colorscheme
+colorscheme hybrid_material             " Set colorscheme
 
-" adjustments for crunchbang colorscheme
-hi Normal      guibg=#263238
-hi TabLine     gui=none guibg=#272c2d
-hi TabLineFill gui=none guibg=#272c2d
-hi TabLineSel  gui=none guibg=bg guifg=#ffffff
+" colorscheme adjustments
+hi TabLine     gui=none guibg=#37474F
+hi TabLineFill gui=none guibg=#37474F
+hi TabLineSel  gui=none guibg=#5F875F guifg=#ffffff
+let g:enable_bold_font = 1              " code like functions and language controls in bold
+let g:enable_italic_font = 1            " comments in italic
 
 " Set the default font family and size.
 if has("gui_running")
@@ -107,7 +108,7 @@ if has("gui_running")
     endif
 endif
 
-set linespace=8   				        " Macvim-specific line-height.
+set linespace=9   				        " Macvim-specific line-height.
 set guioptions-=e					    " Disable GUI tabs
 set guioptions-=m                       " Disable menu bar
 set guioptions-=T                       " Disable toolbar
