@@ -25,6 +25,7 @@ Plugin 'ervandew/supertab'              " Perform all your vim insert mode compl
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
 Plugin 'tpope/vim-commentary'           " Comment stuff out
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format (aka. 'Emmet')
+Plugin 'vim-syntastic/syntastic'        " Syntax checking
 
 " Visual helpers
 Plugin 'kristijanhusak/vim-hybrid-material' " Color scheme
@@ -258,10 +259,23 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+
 "/
 "/ commentary
 "/ 
 autocmd FileType typoscript setlocal commentstring=#\ %s
+
+
+"/
+"/ syntastic
+"/ 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 
