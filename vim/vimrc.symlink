@@ -195,6 +195,10 @@ nmap <Leader>r :%s/
 " Make it easy to open current project in finder
 nmap <Leader>o :!open .<cr><cr>
 
+" Indent lines by pressing <,> only once
+nmap > >>
+nmap < <<
+
 
 
 
