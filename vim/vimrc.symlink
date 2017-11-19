@@ -19,6 +19,7 @@ Plugin 'matze/vim-move'                 " Move blocks of text around
 
 " Autocompletion, Formatting, Snippets etc.
 Plugin 'SirVer/ultisnips'               " The ultimate snippet solution for Vim. 
+Plugin 'honza/vim-snippets'             " Default snippets
 Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
