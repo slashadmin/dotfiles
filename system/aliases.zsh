@@ -27,7 +27,7 @@ alias shf='showhiddenfiles';
 alias hhf='hidehiddenfiles';
 
 # Instant Server for Current Directory - https://gist.github.com/JeffreyWay/1525217
-alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
+alias server='open http://localhost:8000 && php -S localhost:8000'
 
 # Open /etc/hosts file
 alias hosts="sudo vim /etc/hosts"
