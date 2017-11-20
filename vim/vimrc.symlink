@@ -9,8 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 
 " Navigation
-Plugin 'tpope/vim-vinegar'              " sidebar like directory browser
-Plugin 'scrooloose/nerdtree'            " A tree explorer plugin
 Plugin 'CTrlpvim/ctrlp.vim'             " Fuzzy file, buffer, mru, tag, etc finder
 
 " Search and Replace
@@ -19,26 +17,25 @@ Plugin 'skwp/greplace.vim'              " Global search and replace
 Plugin 'terryma/vim-multiple-cursors'   " Sublime Text like Multiple cursors
 Plugin 'matze/vim-move'                 " Move blocks of text around
 
-" Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'   " Snipmate dependency - interpret a file by function and cache file automatically
-Plugin 'tomtom/tlib_vim'                " Snipmate dependency - Some utility functions
-Plugin 'garbas/vim-snipmate'            " implements some of TextMate's snippets features
-
-" Autocompletion, Formatting, etc.
+" Autocompletion, Formatting, Snippets etc.
+Plugin 'SirVer/ultisnips'               " The ultimate snippet solution for Vim. 
+Plugin 'honza/vim-snippets'             " Default snippets
 Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
 Plugin 'jiangmiao/auto-pairs'           " insert or delete brackets, parens, quotes in pair
-Plugin 'tomtom/tcomment_vim'            " An extensible & universal comment vim-plugin that also handles embedded filetypes
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format
+Plugin 'tpope/vim-commentary'           " Comment stuff out
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format (aka. 'Emmet')
+Plugin 'vim-syntastic/syntastic'        " Syntax checking
 
 " Visual helpers
-Plugin 'nightsense/vim-crunchbang'      " Color scheme
+Plugin 'kristijanhusak/vim-hybrid-material' " Color scheme
 Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
 Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin vertical lines
 
 " Language/File specific plugins
 Plugin 'sheerun/vim-polyglot'           " A solid language pack 
 Plugin 'posva/vim-vue'                  " Syntax highlighting for Vue components.
+Plugin 'mstruebing/vim.typoscript'      " Syntax highlighting for TypoScript / Fusion files
 
 
 " All of your Plugins must be added before the following line
@@ -73,9 +70,13 @@ noremap k gk
 " Swap files out of the project root
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
-" Files and directories to hide
-let g:netrw_list_hide='.DS_Store'
+" Hide banner in netrw
+let g:netrw_banner = 0
+" Files and directories to hide in netrw (^\.\.\=/\=$ removes /. and /..)
+let g:netrw_list_hide= '.DS_Store,^\.\.\=/\=$'
 set synmaxcol=250                       "limit syntax highligthing to 250 chars
+
+
 
 
 " -------------Tabs, indentation and lines-------------"
@@ -85,31 +86,33 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set shiftround                          " Round indent to nearest multiple of 4
+set autoindent
+filetype plugin indent on
 
 
 
 
 "-------------Visuals--------------"
 set background=dark 
-colorscheme crunchbang                  " Set colorscheme
+colorscheme hybrid_material             " Set colorscheme
 
-" adjustments for crunchbang colorscheme
-hi Normal guibg=#263238
-hi TabLine     gui=none guibg=#272c2d
-hi TabLineFill gui=none guibg=#272c2d
-hi TabLineSel  gui=none guibg=bg guifg=#ffffff
-
+" colorscheme adjustments
+hi TabLine     gui=none guibg=#37474F
+hi TabLineFill gui=none guibg=#37474F
+hi TabLineSel  gui=none guibg=#5F875F guifg=#ffffff
+let g:enable_italic_font = 1            " comments in italic
 
 " Set the default font family and size.
+" Download font here https://www.marksimonson.com/fonts/view/anonymous-pro
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 18
+        set guifont=Anonymous\ Pro\ Minus\ 18
     elseif has("gui_macvim")
-        set guifont=Inconsolata:h18
+        set guifont=Anonymous\ Pro\ Minus:h18
     endif
 endif
 
-set linespace=10   				        " Macvim-specific line-height.
+set linespace=9   				        " Macvim-specific line-height.
 set guioptions-=e					    " Disable GUI tabs
 set guioptions-=m                       " Disable menu bar
 set guioptions-=T                       " Disable toolbar
@@ -152,6 +155,9 @@ nmap <Leader>ev :tabedit $MYVIMRC<cr>
 " Make it easy to edit snippet files.
 nmap <Leader>es :e ~/.vim/snippets/
 
+" open netrw using [-]
+nmap - :Ex<cr>
+
 " Make it easy to run phpunit
 nmap <Leader>t :!./vendor/bin/phpunit<cr>
 nmap <Leader>tt :!./vendor/bin/phpunit --filter=
@@ -192,11 +198,16 @@ nmap <Leader>r :%s/
 " Make it easy to open current project in finder
 nmap <Leader>o :!open .<cr><cr>
 
+" Indent lines by pressing <,> only once
+nmap > >>
+nmap < <<
+
 
 
 
 "-------------Syntax--------------"
 au BufRead,BufNewFile *.inc set syntax=php      " use php syntax for *.inc files
+au BufRead,BufNewFile *.fusion set filetype=typoscript
 
 
 
@@ -208,14 +219,6 @@ au BufRead,BufNewFile *.inc set syntax=php      " use php syntax for *.inc files
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store|bower_components\|vendor\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 map <D-p> :CtrlP<cr>
-
-
-"/
-"/ NERDTree 
-"/
-let NERDTreeHijackNetrw = 0		"Use dash to open Vinegar instead of NERDTree
-"Make NERDTree easier to toggle.
-nmap <D-1> :NERDTreeToggle<cr>
 
 
 "/
@@ -248,21 +251,44 @@ augroup END
 "/
 "/ vim-move
 "/ 
-" let g:move_key_modifier = 'C'
+let g:move_key_modifier = 'C'
+
+
+"/
+"/ ultisnips
+"/ 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+"/
+"/ commentary
+"/ 
+autocmd FileType typoscript setlocal commentstring=#\ %s
+
+
+"/
+"/ syntastic
+"/ 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
-
 augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %
 augroup END
 
-" Save on leving insert mode
-autocmd InsertLeave * write
 
 
 
@@ -273,3 +299,4 @@ autocmd InsertLeave * write
 " *                                       " Search for word under the cursor
 " :PluginUpdate                           " Update all plugins
 " :Ex                                     " Open directory listing
+" <ctrl> + n                              " Multiple cursors keymapping
