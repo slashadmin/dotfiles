@@ -106,9 +106,9 @@ let g:enable_italic_font = 1            " comments in italic
 " Download font here https://www.marksimonson.com/fonts/view/anonymous-pro
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Anonymous\ Pro\ Minus\ 18
+        set guifont=Anonymous\ Pro\ 18
     elseif has("gui_macvim")
-        set guifont=Anonymous\ Pro\ Minus:h18
+        set guifont=Anonymous\ Pro:h18
     endif
 endif
 
