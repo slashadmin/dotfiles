@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# USAGE:
+#   $ killport [PORT]
+#   e.g. $ killport 8000
+
+port=$(lsof -n -i4TCP:$1 | grep LISTEN | awk '{ print $2 }')
+kill -9 $port 
