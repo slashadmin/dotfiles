@@ -73,7 +73,7 @@ set directory=~/.vim/swap//
 " Hide banner in netrw
 let g:netrw_banner = 0
 " Files and directories to hide in netrw (^\.\.\=/\=$ removes /. and /..)
-let g:netrw_list_hide= '.DS_Store,^\.\.\=/\=$'
+let g:netrw_list_hide= '.DS_Store,.sass-cache,^\.\.\=/\=$'
 set synmaxcol=250                       "limit syntax highligthing to 250 chars
 
 
