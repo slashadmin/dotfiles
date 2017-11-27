@@ -126,6 +126,9 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
+" don't hide certain text/symbols in markdown and json
+set conceallevel=0
+
 
 
 
