@@ -37,5 +37,5 @@ alias e.="e $HOME/.dotfiles"
 alias cd.="cd $HOME/.dotfiles"
 alias pull.="(cd $HOME/.dotfiles && git pull)"
 
-# Notes
-alias notes="e $HOME/Dropbox/Settings/notes.md"
+# create a static clone of a website
+alias clone="wget --mirror --convert-links --adjust-extension --page-requisites --no-parent"
