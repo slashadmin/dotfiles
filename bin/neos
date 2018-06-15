@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+PROJECT=$1 
+COMPOSER=false
+
+[ -z "$1" ] && echo "No argument(s) supplied" && exit 0
+
+if [ "$1" = "composer" ] ; then
+    [ -z "$2" ] && echo "No project name supplied" && exit 0
+    PROJECT=$2 
+    COMPOSER=true
+    composer create-project --no-install neos/neos-base-distribution ${@:2}
+else
+    git clone git@gitlab.asoluto.com:intern/neosboilerplate.git $PROJECT
+fi
+
+cd $PROJECT
+composer install
+
+cp Configuration/Development/Settings.yaml.example Configuration/Development/Settings.yaml
+sed -i '' -e "/dbname:/ s/flow/$PROJECT/" Configuration/Development/Settings.yaml
+sed -i '' -e "/user:/ s/''/'root'/" Configuration/Development/Settings.yaml
+
+mysql -u root -e "create database $PROJECT ;"
+
+./flow doctrine:migrate
+./flow user:create --roles=Administrator
+
+if [ "$COMPOSER" = false ] ; then
+    ./flow site:import --package-key=Asoluto.Site
+fi
+
+./flow server:run
