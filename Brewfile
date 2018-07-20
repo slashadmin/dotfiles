@@ -21,7 +21,7 @@ brew 'the_silver_searcher'
 
 # Cask
 cask '1password'
-cask 'iterm'
+cask 'iterm2'
 cask 'google-chrome'
 cask 'macvim'
 cask 'visual-studio-code'
