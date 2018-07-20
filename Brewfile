@@ -5,7 +5,7 @@ brew 'git'
 brew 'wget'
 brew 'curl'
 brew 'node'
-brew 'php71'
+brew 'php72'
 brew 'phpunit'
 
 # Vim
