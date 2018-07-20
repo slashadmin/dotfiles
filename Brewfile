@@ -4,6 +4,11 @@ tap 'homebrew/bundle'
 brew 'git'
 brew 'wget'
 brew 'curl'
+brew 'python'
+
+# Database
+brew 'sqlite'
+brew 'mariadb'
 
 # nodejs
 brew 'node'
