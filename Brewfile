@@ -4,7 +4,6 @@ tap 'homebrew/bundle'
 brew 'git'
 brew 'wget'
 brew 'curl'
-brew 'python'
 
 # Database
 brew 'sqlite'
@@ -16,8 +15,9 @@ brew 'grunt-cli'
 
 # PHP
 brew 'php72'
-brew 'phpunit'
 brew 'composer'
+brew 'imagemagick'
+brew 'pkg-config'
 
 # Vim
 brew 'ack'
