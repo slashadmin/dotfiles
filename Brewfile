@@ -20,6 +20,7 @@ brew 'imagemagick'
 brew 'pkg-config'
 
 # Vim
+brew 'vim'
 brew 'ack'
 brew 'coreutils'
 brew 'spark'
