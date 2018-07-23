@@ -12,6 +12,7 @@ brew 'mariadb'
 
 # nodejs
 brew 'node'
+brew 'grunt-cli'
 
 # PHP
 brew 'php72'
@@ -39,3 +40,4 @@ cask 'spotify'
 cask 'tunnelblick'
 cask 'vlc'
 cask 'caffeine'
+cask 'flycut'
