@@ -1,2 +1,2 @@
-export EDITOR='mvim'
+export EDITOR='code'
 export DEFAULT_USER='christophengelmayer'
