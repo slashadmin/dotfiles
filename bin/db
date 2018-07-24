@@ -7,13 +7,11 @@ fi
 
 if [ ! -z "$2" ]; then
     if [ "$1" = "create" ] ; then
-        mysql -u root -e "create database $2 ;"
+        mysql -uroot -e 'CREATE DATABASE IF NOT EXISTS `'"$2"'` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'
     elif [ "$1" = "drop" ] ; then
-        mysql -u root -e "drop database if exists $2 ;"
+        mysql -uroot -e 'DROP DATABASE IF EXISTS `'"$2"'`;'
     elif [ "$1" = "list" ] ; then
-        mysql -u root -e "show databases;"
-    elif [ "$1" = "raw" ] ; then
-        mysql -u root -e "show databases;"
+        mysql -uroot -e 'SHOW DATABASES;'
     else
         echo "Unknown command"
         exit 1
