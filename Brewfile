@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 brew 'git'
 brew 'wget'
 brew 'curl'
+brew 'sox' # used in noise command
 
 # Database
 brew 'sqlite'
@@ -42,3 +43,4 @@ cask 'tunnelblick'
 cask 'vlc'
 cask 'caffeine'
 cask 'flycut'
+cask 'tomighty'
