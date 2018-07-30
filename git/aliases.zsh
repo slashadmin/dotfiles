@@ -13,3 +13,4 @@ alias gundo="git reset HEAD~"
 alias gco='git checkout'
 alias go='open . -a GitX'
 alias gstage='git pull && git checkout staging && git merge master --no-ff -m"Deployment to Staging" && git push && git checkout master && git merge staging && git push'
+alias gproduction='git pull && git checkout production && git merge master --no-ff -m"Deployment to Production" && git push && git checkout master && git merge production && git push'
