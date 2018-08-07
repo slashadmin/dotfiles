@@ -50,10 +50,11 @@ There's a few special files in the hierarchy.
 
 ## bash/editor Theme
 
-I preferre the iTerm 2 Theme [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized). In order for this theme to render correctly, you will need a [Powerline-patched font](https://github.com/powerline/fonts).
+iTerm 2 Theme [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized). In order for this theme to render correctly, you need a [Powerline-patched font](https://github.com/powerline/fonts).
 
-For VIM I use [Fira Code](https://github.com/tonsky/FiraCode).
+I use **Meslo LG M for Powerline** in the terminal and **Anonymous Pro** in the editor.
+(Both are installed automatically using homebrew)
 
-## thanks
+## Thanks
 
 I forked this repo from the brilliant [Zach Holman](https://github.com/holman/dotfiles)'.

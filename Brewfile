@@ -1,4 +1,5 @@
 tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'
 
 # Basics
 brew 'git'
@@ -44,3 +45,7 @@ cask 'vlc'
 cask 'caffeine'
 cask 'flycut'
 cask 'tomighty'
+
+# Fonts
+cask 'font-meslo-for-powerline'
+cask 'font-anonymous-pro'
