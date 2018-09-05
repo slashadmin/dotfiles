@@ -6,6 +6,9 @@ brew 'git'
 brew 'wget'
 brew 'curl'
 brew 'sox' # used in noise command
+brew 'prettyping'
+brew 'bat'
+brew 'tldr'
 
 # Database
 brew 'sqlite'

@@ -39,3 +39,7 @@ alias pull.="(cd $HOME/.dotfiles && git pull)"
 
 # create a static clone of a website
 alias clone="wget --mirror --convert-links --adjust-extension --page-requisites --no-parent"
+
+alias ping="prettyping"
+alias cat='bat'
+alias man='tldr'
