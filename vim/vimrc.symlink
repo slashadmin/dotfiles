@@ -174,9 +174,6 @@ nmap <Leader>cu :!composer update<cr>
 " Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
-" toggle fullscreen mode (MacVim)
-map <C-F> :set invfu<CR>
-
 " Quit insert mode using 'jj'
 inoremap jj <ESC>
 
