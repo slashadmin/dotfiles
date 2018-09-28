@@ -6,3 +6,6 @@ atom.symlink/storage
 atom.symlink/themes
 
 git/gitconfig.symlink
+
+zsh/k.zsh
+zsh/z.zsh
