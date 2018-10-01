@@ -1,5 +1,5 @@
-alias l='k'
-alias ls='k'
+alias l='k -h'
+alias ls='k -h'
 alias ll='\ls -lAh'
 
 alias o="open ."
