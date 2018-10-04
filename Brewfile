@@ -5,7 +5,8 @@ tap 'homebrew/cask-fonts'
 brew 'git'
 brew 'wget'
 brew 'curl'
-brew 'sox' # used in noise command
+brew 'sox'      # used in noise command
+brew 'mpsyt '   # used in focus command
 brew 'prettyping'
 brew 'bat'
 brew 'tldr'

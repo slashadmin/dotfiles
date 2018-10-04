@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -u
+set -e
+
+ARGUMENT=${1:-''}
+SOUND=MgApT3VHtZY
+
+# Stop script when running in background
+if [ "$ARGUMENT" == "stop" ]; then
+    kill $(ps aux | grep "mpsyt" | awk '{print $2}')
+    exit 0
+fi
+
+mpsyt playurl $SOUND \
+    > /dev/null 2>&1 &
