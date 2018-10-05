@@ -42,3 +42,5 @@ alias clone="wget --mirror --convert-links --adjust-extension --page-requisites 
 alias ping="prettyping"
 alias cat='bat'
 alias man='tldr'
+
+alias gusch="noise stop;focus stop"
