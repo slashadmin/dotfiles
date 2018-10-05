@@ -8,9 +8,8 @@ SOUND=MgApT3VHtZY
 
 # Stop script when running in background
 if [ "$ARGUMENT" == "stop" ]; then
-    kill $(ps aux | grep "mpsyt" | awk '{print $2}')
+    pkill -f mpsyt
     exit 0
 fi
 
-mpsyt playurl $SOUND \
-    > /dev/null 2>&1 &
+nohup mpsyt playurl $SOUND &>/dev/null &
