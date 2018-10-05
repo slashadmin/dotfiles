@@ -56,7 +56,7 @@ minutes=${1:-'59'}
 
 # Easy way to stop script when running in background
 if [ "$minutes" == "stop" ]; then
-    kill $(ps aux | grep '[b]rownnoise' | awk '{print $2}')
+    pkill -f '[b]rownnoise'
     exit 0
 fi
 
