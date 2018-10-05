@@ -3,13 +3,18 @@
 set -u
 set -e
 
-ARGUMENT=${1:-''}
-YOUTUBE_PLAYLIST_ID=PLOoislNmW3OiDeQrbVYqBG0AZ-NdhH2D1
+PARAM=${1:-''}
+PLAYLIST_ID=PLOoislNmW3OiDeQrbVYqBG0AZ-NdhH2D1
 
 # Stop script when running in background
-if [ "$ARGUMENT" == "stop" ]; then
+if [ "$PARAM" == "stop" ]; then
     pkill -f mpsyt
     exit 0
+elif [ "$PARAM" == "nature" ]; then
+    PLAYLIST_ID=PLqHtR-iQm26VdGjm-Raii6S2VVaiwk9HL
+elif [ "$PARAM" != "" ]; then
+    # Ability to pass a YouTube playlist id as first parameter
+    PLAYLIST_ID=$PARAM
 fi
 
-nohup mpsyt //$YOUTUBE_PLAYLIST_ID, 1, shuffle, all &>/dev/null &
+nohup mpsyt //$PLAYLIST_ID, 1, shuffle, all &>/dev/null &
