@@ -4,7 +4,7 @@ set -u
 set -e
 
 ARGUMENT=${1:-''}
-SOUND=MgApT3VHtZY
+YOUTUBE_PLAYLIST_ID=PLOoislNmW3OiDeQrbVYqBG0AZ-NdhH2D1
 
 # Stop script when running in background
 if [ "$ARGUMENT" == "stop" ]; then
@@ -12,4 +12,4 @@ if [ "$ARGUMENT" == "stop" ]; then
     exit 0
 fi
 
-nohup mpsyt playurl $SOUND &>/dev/null &
+nohup mpsyt //$YOUTUBE_PLAYLIST_ID, 1, shuffle, all &>/dev/null &
