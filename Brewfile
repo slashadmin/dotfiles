@@ -7,6 +7,7 @@ brew 'wget'
 brew 'curl'
 brew 'sox'          # used in noise command
 brew 'mps-youtube'  # used in focus command
+brew 'shpotify'
 brew 'prettyping'
 brew 'bat'
 brew 'tldr'
