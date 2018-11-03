@@ -12,6 +12,9 @@ if [ "$PARAM" == "stop" ]; then
     exit 0
 elif [ "$PARAM" == "nature" ]; then
     PLAYLIST_ID=PLqHtR-iQm26VdGjm-Raii6S2VVaiwk9HL
+elif [ "$PARAM" == "spa" ]; then
+    spotify play uri spotify:user:spotify:playlist:37i9dQZF1DX4Q2SnB3glnP
+    exit 1
 elif [ "$PARAM" != "" ]; then
     # Ability to pass a YouTube playlist id as first parameter
     PLAYLIST_ID=$PARAM
