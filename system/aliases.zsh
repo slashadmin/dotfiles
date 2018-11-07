@@ -44,3 +44,4 @@ alias cat='bat'
 alias man='tldr'
 
 alias gusch="noise stop;focus stop;spotify stop"
+alias lock="gusch && pmset sleepnow"
