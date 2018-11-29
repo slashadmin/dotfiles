@@ -11,6 +11,6 @@ alias gl='git log --graph --oneline --decorate --all'
 alias nah="git reset --hard; git clean -df;"
 alias gundo="git reset HEAD~"
 alias gco='git checkout'
-alias go='open . -a GitX'
+alias go='open . -a Fork'
 alias gstage='git pull && git checkout staging && git merge master --no-ff -m"Deployment to Staging" && git push && git checkout master && git merge staging && git push'
 alias gproduction='git pull && git checkout production && git merge master --no-ff -m"Deployment to Production" && git push && git checkout master && git merge production && git push'
