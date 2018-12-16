@@ -54,6 +54,13 @@ cask 'caffeine'
 cask 'flycut'
 cask 'tomighty'
 
+# Quicklook plugins 
+cask 'qlcolorcode' # syntax highlighting in preview
+cask 'qlstephen'  # preview plaintext files without extension
+cask 'qlmarkdown'  # preview markdown files
+cask 'quicklook-json'  # preview json files
+cask 'quicklook-csv'  # preview csvs
+
 # Fonts
 cask 'font-meslo-for-powerline'
 cask 'font-anonymous-pro'
