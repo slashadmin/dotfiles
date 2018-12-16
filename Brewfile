@@ -11,6 +11,7 @@ brew 'shpotify'
 brew 'prettyping'
 brew 'bat'
 brew 'tldr'
+brew 'trash'
 
 # Database
 brew 'sqlite'
