@@ -22,7 +22,7 @@ brew 'node'
 brew 'grunt-cli'
 
 # PHP
-brew 'php72'
+brew 'php@7.2'
 brew 'composer'
 brew 'imagemagick'
 brew 'pkg-config'
