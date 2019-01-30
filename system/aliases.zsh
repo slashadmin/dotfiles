@@ -43,5 +43,5 @@ alias ping="prettyping"
 alias cat='bat'
 alias man='tldr'
 
-alias gusch="noise stop;focus stop;spotify stop"
+alias gusch='noise stop;focus stop;if ps aux|grep -q "[S]potify.app";then spotify stop;fi'
 alias lock="gusch && pmset sleepnow"
