@@ -65,3 +65,4 @@ cask 'quicklook-csv'  # preview csvs
 # Fonts
 cask 'font-meslo-for-powerline'
 cask 'font-anonymous-pro'
+cask 'font-ibm-plex'
