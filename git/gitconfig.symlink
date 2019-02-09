@@ -1,13 +1,7 @@
-# Sample gitconfig
-#
-
 [hub]
         protocol = https
-[user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
 [credential]
-        helper = GIT_CREDENTIAL_HELPER
+        helper = osxkeychain
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote

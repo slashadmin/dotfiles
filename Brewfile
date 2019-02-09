@@ -15,6 +15,7 @@ brew 'tldr'
 brew 'trash'
 brew 'openssl'
 brew 'z'
+brew 'fzf'
 brew 'powerlevel9k'
 
 # Database
