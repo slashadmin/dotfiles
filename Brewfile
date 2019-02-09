@@ -13,6 +13,7 @@ brew 'prettyping'
 brew 'bat'
 brew 'tldr'
 brew 'trash'
+brew 'openssl'
 brew 'z'
 brew 'powerlevel9k'
 
@@ -22,7 +23,6 @@ brew 'mariadb'
 
 # nodejs
 brew 'node'
-brew 'grunt-cli'
 
 # PHP
 brew 'php@7.2'
@@ -57,6 +57,7 @@ cask 'vlc'
 cask 'caffeine'
 cask 'flycut'
 cask 'tomighty'
+cask 'seashore'
 
 # Quicklook plugins 
 cask 'qlcolorcode' # syntax highlighting in preview
