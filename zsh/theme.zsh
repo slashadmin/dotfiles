@@ -1,1 +1,7 @@
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_STATUS_OK=false
+POWERLEVEL9K_STATUS_HIDE_SIGNAME=true
+POWERLEVEL9K_STATUS_CROSS=true
+
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
