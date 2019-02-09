@@ -12,6 +12,7 @@ brew 'prettyping'
 brew 'bat'
 brew 'tldr'
 brew 'trash'
+brew 'z'
 
 # Database
 brew 'sqlite'
