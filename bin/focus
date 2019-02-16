@@ -4,20 +4,18 @@ set -u
 set -e
 
 PARAM=${1:-''}
-PLAYLIST_ID=PLOoislNmW3OiDeQrbVYqBG0AZ-NdhH2D1
 
 # Stop script when running in background
 if [ "$PARAM" == "stop" ]; then
     pkill -f mpsyt
     exit 0
 elif [ "$PARAM" == "nature" ]; then
-    PLAYLIST_ID=PLqHtR-iQm26VdGjm-Raii6S2VVaiwk9HL
+    nohup mpsyt PLqHtR-iQm26VdGjm-Raii6S2VVaiwk9HL, 1, shuffle, all &>/dev/null &
 elif [ "$PARAM" == "spa" ]; then
     spotify play uri spotify:user:spotify:playlist:37i9dQZF1DX4Q2SnB3glnP
     exit 0
 elif [ "$PARAM" != "" ]; then
-    # Ability to pass a YouTube playlist id as first parameter
-    PLAYLIST_ID=$PARAM
+    exit 1
 fi
 
-nohup mpsyt //$PLAYLIST_ID, 1, shuffle, all &>/dev/null &
+nohup mpsyt playurl g1LNTAdIi8k &>/dev/null &
