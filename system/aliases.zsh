@@ -16,6 +16,9 @@ alias ip="curl ipinfo.io/ip"
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
+# Generate random password
+alias password="openssl rand -base64 32"
+
 alias s='search'
 
 # Show hide hidden files
