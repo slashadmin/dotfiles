@@ -1,5 +1,6 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'sambadevi/powerlevel9k'
 
 # Basics
@@ -49,7 +50,7 @@ cask 'macvim'
 cask 'visual-studio-code'
 cask 'dropbox'
 cask 'transmit'
-cask 'sequel-pro'
+cask 'sequel-pro-nightly'
 cask 'docker'
 cask 'fork'
 cask 'spotify'
