@@ -60,6 +60,7 @@ cask 'caffeine'
 cask 'flycut'
 cask 'tomighty'
 cask 'seashore'
+cask 'notable'
 
 # Quicklook plugins 
 cask 'qlcolorcode' # syntax highlighting in preview
