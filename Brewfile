@@ -27,7 +27,7 @@ brew 'mariadb'
 brew 'node'
 
 # PHP
-brew 'php@7.2'
+brew 'php'
 brew 'composer'
 brew 'imagemagick'
 brew 'pkg-config'
