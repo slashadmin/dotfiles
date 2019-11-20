@@ -20,6 +20,7 @@
         excludesfile = ~/.gitignore
         editor = vim
         attributesfile = ~/.gitattributes
+        autocrlf = input
 [apply]
         whitespace = nowarn
 [mergetool]
