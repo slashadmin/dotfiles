@@ -1,7 +1,6 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
-tap 'sambadevi/powerlevel9k'
 
 # Basics
 brew 'git'
@@ -17,7 +16,7 @@ brew 'trash'
 brew 'openssl'
 brew 'z'
 brew 'fzf'
-brew 'powerlevel9k'
+brew 'starship'
 
 # Database
 brew 'sqlite'
