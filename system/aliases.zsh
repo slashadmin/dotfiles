@@ -47,6 +47,3 @@ alias man='tldr'
 
 alias gusch='noise stop;focus stop;if ps aux|grep -q "[S]potify.app";then spotify stop;fi'
 alias lock="gusch && pmset sleepnow"
-
-alias notes="vim $HOME/Nextcloud/Documents/Notes"
-alias cdnotes="cd $HOME/Nextcloud/Documents/Notes"
