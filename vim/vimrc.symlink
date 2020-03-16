@@ -18,7 +18,7 @@ Plugin 'terryma/vim-multiple-cursors'   " Sublime Text like Multiple cursors
 Plugin 'matze/vim-move'                 " Move blocks of text around
 
 " Autocompletion, Formatting, Snippets etc.
-Plugin 'SirVer/ultisnips'               " The ultimate snippet solution for Vim. 
+" Plugin 'SirVer/ultisnips'               " The ultimate snippet solution for Vim. 
 Plugin 'honza/vim-snippets'             " Default snippets
 Plugin 'tpope/vim-surround'             " quoting/parenthesizing made simple
 Plugin 'ervandew/supertab'              " Perform all your vim insert mode completions with Tab
@@ -27,7 +27,7 @@ Plugin 'tpope/vim-commentary'           " Comment stuff out
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "A parser for a condensed HTML format (aka. 'Emmet')
 
 " Visual helpers
-Plugin 'kristijanhusak/vim-hybrid-material' " Color scheme
+Plugin 'arcticicestudio/nord-vim'       " Color scheme
 Plugin 'gorodinskiy/vim-coloresque'     " css/less/sass/html color preview
 Plugin 'Yggdroot/indentLine'            " Display the indention levels with thin vertical lines
 
@@ -93,12 +93,12 @@ filetype plugin indent on
 
 "-------------Visuals--------------"
 set background=dark 
-colorscheme hybrid_material             " Set colorscheme
+colorscheme nord             " Set colorscheme
 
 " colorscheme adjustments
-hi TabLine     gui=none guibg=#37474F
-hi TabLineFill gui=none guibg=#37474F
-hi TabLineSel  gui=none guibg=#5F875F guifg=#ffffff
+hi TabLine     gui=none guibg=#2e3440
+hi TabLineFill gui=none guibg=#2e3440
+hi TabLineSel  gui=none guibg=#4c566a guifg=#d8dee9
 let g:enable_italic_font = 1            " comments in italic
 
 " Set the default font family and size.
@@ -242,6 +242,7 @@ augroup END
 "/ vim-move
 "/ 
 let g:move_key_modifier = 'C'
+
 
 
 "/
