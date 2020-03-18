@@ -71,6 +71,6 @@ cask 'quicklook-json'  # preview json files
 cask 'quicklook-csv'  # preview csvs
 
 # Fonts
-cask 'font-meslo-for-powerline'
-cask 'font-anonymous-pro'
+cask 'font-meslo-nerd-font'
 cask 'font-ibm-plex'
+
