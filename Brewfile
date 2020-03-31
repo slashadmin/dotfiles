@@ -1,6 +1,5 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
 tap 'dnote/dnote'
 
 # Basics
@@ -46,7 +45,6 @@ cask 'iterm2'
 cask 'opera'
 cask 'google-chrome'
 cask 'firefox'
-cask 'brave'
 cask 'macvim'
 cask 'visual-studio-code'
 cask 'dropbox'
@@ -61,7 +59,6 @@ cask 'caffeine'
 cask 'flycut'
 cask 'tomighty'
 cask 'seashore'
-cask 'notable'
 
 # Quicklook plugins 
 cask 'qlcolorcode' # syntax highlighting in preview
