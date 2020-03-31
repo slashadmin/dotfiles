@@ -35,6 +35,7 @@ alias hosts="sudo vim /etc/hosts"
 
 # dotfiles shortcuts
 alias e.="e $HOME/.dotfiles"
+alias vim.="vim $HOME/.dotfiles"
 alias cd.="cd $HOME/.dotfiles"
 alias pull.="(cd $HOME/.dotfiles && git pull)"
 
