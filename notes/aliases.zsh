@@ -1,5 +1,0 @@
-alias n='dnote'
-alias note='dnote'
-alias notes='dnote view'
-alias nn='dnote add'
-alias nf='dnote find'

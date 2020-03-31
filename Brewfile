@@ -1,6 +1,5 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
-tap 'dnote/dnote'
 
 # Basics
 brew 'git'
@@ -17,7 +16,6 @@ brew 'openssl'
 brew 'z'
 brew 'fzf'
 brew 'starship'
-brew 'dnote'
 
 # Database
 brew 'sqlite'
