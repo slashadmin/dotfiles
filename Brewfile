@@ -16,6 +16,7 @@ brew 'openssl'
 brew 'z'
 brew 'fzf'
 brew 'starship'
+brew 'watson'
 
 # Database
 brew 'sqlite'
