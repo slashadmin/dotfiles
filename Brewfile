@@ -17,6 +17,7 @@ brew 'z'
 brew 'fzf'
 brew 'starship'
 brew 'watson'
+brew 'pwgen'
 
 # Database
 brew 'sqlite'

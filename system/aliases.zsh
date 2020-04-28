@@ -17,7 +17,8 @@ alias ip="curl ipinfo.io/ip"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # Generate random password
-alias password="openssl rand -base64 32"
+alias password="pwgen -yBn 32 1 | pbcopy | echo 'Password copied to pasteboard.'"
+alias pw="password"
 
 alias s='search'
 
