@@ -62,7 +62,6 @@ cask 'seashore'
 
 # Quicklook plugins 
 cask 'qlcolorcode' # syntax highlighting in preview
-cask 'qlstephen'  # preview plaintext files without extension
 cask 'qlmarkdown'  # preview markdown files
 cask 'quicklook-json'  # preview json files
 cask 'quicklook-csv'  # preview csvs
