@@ -42,7 +42,6 @@ brew 'the_silver_searcher'
 # Cask
 cask '1password'
 cask 'iterm2'
-cask 'opera'
 cask 'google-chrome'
 cask 'firefox'
 cask 'macvim'
@@ -58,13 +57,8 @@ cask 'vlc'
 cask 'caffeine'
 cask 'flycut'
 cask 'tomighty'
-cask 'seashore'
-
-# Quicklook plugins 
-cask 'qlcolorcode' # syntax highlighting in preview
-cask 'qlmarkdown'  # preview markdown files
-cask 'quicklook-json'  # preview json files
-cask 'quicklook-csv'  # preview csvs
+cask 'nextcloud'
+cask 'glance' # All-in-one Quick Look plugin
 
 # Fonts
 cask 'font-meslo-nerd-font'
