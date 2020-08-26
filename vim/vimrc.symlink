@@ -36,6 +36,9 @@ Plugin 'sheerun/vim-polyglot'           " A solid language pack
 Plugin 'posva/vim-vue'                  " Syntax highlighting for Vue components.
 Plugin 'mstruebing/vim.typoscript'      " Syntax highlighting for TypoScript / Fusion files
 
+" Applications
+Plugin 'vimwiki/vimwiki'                " Personal Wiki for Vim
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()
