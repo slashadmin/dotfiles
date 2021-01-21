@@ -3,6 +3,7 @@ tap 'homebrew/cask-fonts'
 
 # Basics
 brew 'git'
+brew 'diff-so-fancy'
 brew 'wget'
 brew 'curl'
 brew 'sox'          # used in noise command
