@@ -27,3 +27,7 @@ $ZSH/script/install
 # Cleanup Homebrew
 echo "› brew cleanup"
 brew cleanup
+
+# Upgrade Composer
+echo "› composer global update"
+composer global update
