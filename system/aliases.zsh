@@ -1,5 +1,7 @@
-alias l='ls'
-alias ll='ls -lAh'
+alias ls='exa'
+alias l='exa --oneline'
+alias ll='exa -la --git'
+alias lt='exa --tree'
 
 alias o="open ."
 
@@ -14,7 +16,7 @@ alias c="cd ~/Code"
 alias ip="curl ipinfo.io/ip"
 
 # Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="more ~/.ssh/id_chengel.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # Generate random password
 alias password="pwgen -yBn 32 1 | pbcopy | echo 'Password copied to pasteboard.'"
@@ -49,3 +51,4 @@ alias man='tldr'
 
 alias gusch='noise stop;focus stop;if ps aux|grep -q "[S]potify.app";then spotify stop;fi'
 alias lock="gusch && pmset sleepnow"
+alias lorem="echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' | pbcopy"
