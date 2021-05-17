@@ -1,4 +1,5 @@
 tap 'homebrew/bundle'
+tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 
 # Basics
@@ -19,12 +20,13 @@ brew 'fzf'
 brew 'starship'
 brew 'watson'
 brew 'pwgen'
+brew 'exa'
 
 # Database
 brew 'sqlite'
 brew 'mariadb'
 
-# nodejs
+# node
 brew 'node'
 
 # PHP
@@ -45,11 +47,12 @@ cask '1password'
 cask 'iterm2'
 cask 'google-chrome'
 cask 'firefox'
+cask 'microsoft-edge'
 cask 'macvim'
 cask 'visual-studio-code'
 cask 'dropbox'
 cask 'transmit'
-cask 'sequel-pro-nightly'
+cask 'sequel-ace'
 cask 'docker'
 cask 'fork'
 cask 'spotify'
@@ -57,11 +60,12 @@ cask 'tunnelblick'
 cask 'vlc'
 cask 'caffeine'
 cask 'flycut'
-cask 'tomighty'
 cask 'nextcloud'
 cask 'glance' # All-in-one Quick Look plugin
+cask 'microsoft-teams'
 
 # Fonts
-cask 'font-meslo-nerd-font'
+cask 'font-fira-code-nerd-font'
+cask 'font-sf-mono-for-powerline'
 cask 'font-ibm-plex'
 
